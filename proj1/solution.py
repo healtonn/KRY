@@ -181,4 +181,5 @@ for i in range(N//2):
     old_x = getDefaultX(x)
     x = old_x
 
-print(int_to_bytes(x).decode(), end='')
+x = x.to_bytes((x.bit_length() + 7) // 8, byteorder='little')
+print(x.decode(), end='')
